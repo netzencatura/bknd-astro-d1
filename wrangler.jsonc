@@ -1,0 +1,50 @@
+{
+  "name": "bknd-astro",
+  "main": "./dist/_worker.js/index.js",
+  "compatibility_date": "2025-09-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "ENVIRONMENT": "development"
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "astro-bknd-d1",
+      "database_id": "f9cfb363-bc53-4507-9812-eed6f2a346a2"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "bckt"
+    }
+  ],
+  "env": {
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "astro-bknd-d1",
+          "database_id": "f9cfb363-bc53-4507-9812-eed6f2a346a2",
+          "remote": true
+        }
+      ],
+      "r2_buckets": [
+        {
+          "binding": "BUCKET",
+          "bucket_name": "bckt"
+        }
+      ]
+    }
+  }
+}
