@@ -16,7 +16,6 @@ export default {
     return {
       // in production mode, we use the appconfig.json file as static config
       // in development, we use it as initial config
-      connection: d1({ binding: env.DB }),
       config: appConfig as any,
       options: {
         // switch between code and db mode based on the environment
