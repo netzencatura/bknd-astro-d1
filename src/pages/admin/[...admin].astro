@@ -1,8 +1,7 @@
 ---
-import { Admin } from "bknd/ui";
 import "bknd/dist/styles.css";
-
-import { getApi } from "../../bknd";
+import { getApi } from "../../bknd"; 
+import CustomAdmin from '../../components/CustomAdmin.tsx';
 
 const api = await getApi(Astro, { verify: true });
 const user = api.getUser();
@@ -12,10 +11,6 @@ export const prerender = false;
 
 <html>
   <body>
-    <Admin
-      withProvider={{ user }}
-      config={{ basepath: "/admin", theme: "dark", logo_return_path: "/../" }}
-      client:only
-    />
+    <CustomAdmin user={user} client:only="react" />
   </body>
 </html>
